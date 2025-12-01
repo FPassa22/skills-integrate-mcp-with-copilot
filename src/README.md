@@ -6,6 +6,7 @@ A super simple FastAPI application that allows students to view and sign up for 
 
 - View all available extracurricular activities
 - Sign up for activities
+ - Persistent storage using SQLModel (SQLite by default, Postgres via DATABASE_URL)
 
 ## Getting Started
 
@@ -48,3 +49,12 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+With the new DB support, the application uses SQLModel / SQLAlchemy for persistence.
+By default it will use a local SQLite DB file `mergington.db` – to use Postgres set env var:
+
+```
+export DATABASE_URL=postgresql+psycopg2://user:password@localhost/dbname
+```
+
+Run the `create_db_and_tables()` on startup to create database schema automatically.

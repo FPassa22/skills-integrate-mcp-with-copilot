@@ -1,2 +1,9 @@
 fastapi
 uvicorn
+
+# DB
+sqlmodel
+SQLAlchemy
+psycopg-binary
+alembic
+python-dotenv
